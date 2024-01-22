@@ -11,13 +11,30 @@ export default function Home() {
         <Header />
       </div>
       <div className="flex">
-        <div className="w-1/4 bg-gray-500">
-          <Left />
-        </div>
-        <div className="w-1/4 bg-lime-200">
-          <Right />
-        </div>
+        <Left />
+        <Right />
       </div>
     </div>
   );
 }
+
+const data = {
+  question: {
+    title: `Answer 1`,
+    detail: `question detail 1`,
+  },
+  answer: [
+    {
+      text: `text 1`,
+      rating: 10,
+    },
+    {
+      text: `text 2`,
+      rating: 5,
+    },
+    {
+      text: `text 3`,
+      rating: 8,
+    },
+  ],
+};
