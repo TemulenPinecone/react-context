@@ -1,5 +1,7 @@
 import React, { useContext, createContext, useState } from "react";
 
+// CONTEXT ҮҮСГЭХ БҮРДЭЭ БИЧНЭ
+// -----------------------------------------
 const QuestionContext = createContext();
 export const useQuestionData = () => {
   useContext(QuestionContext);
@@ -7,15 +9,22 @@ export const useQuestionData = () => {
 
 export const QuestionProvider = ({ children }) => {
   const [data, setData] = useState(dummyData);
-  return <QuestionContext.Provider>{children}</QuestionContext.Provider>;
+  const [count, setCount] = useState(0);
+
+  return (
+    <QuestionContext.Provider value={{ data, setData, count, setCount }}>
+      {children}
+    </QuestionContext.Provider>
+  );
 };
+// -------------------------------------------
 
 const dummyData = {
   question: {
     title: `Answer 1`,
     detail: `question detail 1`,
   },
-  answer: [
+  answers: [
     {
       text: `text 1`,
       rating: 10,

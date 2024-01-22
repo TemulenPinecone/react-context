@@ -1,3 +1,3 @@
-export * from "./header";
+export * from "./Header";
 export * from "./Right";
 export * from "./Left";
