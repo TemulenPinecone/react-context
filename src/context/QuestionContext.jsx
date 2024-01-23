@@ -4,7 +4,7 @@ import React, { useContext, createContext, useState } from "react";
 // -----------------------------------------
 const QuestionContext = createContext();
 export const useQuestionData = () => {
-  useContext(QuestionContext);
+  return useContext(QuestionContext);
 };
 
 export const QuestionProvider = ({ children }) => {
